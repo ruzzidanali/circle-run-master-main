@@ -1,0 +1,27 @@
+# === Build / Output files ===
+2508_OutputV1/
+Boxed_2508/
+output.json
+structure.json
+TNB_2508output.json
+pdfTestingFolders
+TNB_2508_output.json
+TNB_2508_MULTI_ALLPAGES.pdf
+uploads
+debut_text/
+crops/
+
+# === Node.js ===
+node_modules/
+.env
+dist/
+logs/
+*.log
+
+# === OS & IDE stuff ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+processTemplateOCRold.js
+regionParsersold.js
