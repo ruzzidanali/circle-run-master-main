@@ -6,6 +6,10 @@ import { waterRouter } from "./src/water/extractWaterBillsAPI.js";
 
 const app = express();
 
+app.get("/health", (_req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 // Use raw body parser for PDFs
 app.use("/run", express.raw({ type: "application/pdf", limit: "200mb" }));
 
@@ -133,7 +137,7 @@ app.post("/CELCOMDIGI", async (req, res) => {
 
 app.use("/water-bills", waterRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });

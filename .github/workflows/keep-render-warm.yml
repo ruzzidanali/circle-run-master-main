@@ -1,0 +1,16 @@
+name: Keep Render warm
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render health endpoint
+        env:
+          TARGET_URL: https://circle-run-master-main.onrender.com/health
+        run: |
+          curl -m 10 -fsS "$TARGET_URL"
