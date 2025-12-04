@@ -2,7 +2,7 @@ name: Keep Render warm
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
@@ -13,4 +13,4 @@ jobs:
         env:
           TARGET_URL: https://circle-run-master-main.onrender.com/health
         run: |
-          curl -m 30 -fsS "$TARGET_URL"
+          curl -m 30 -fsS "$TARGET_URL" || echo "Ping failed, but that's okay"
