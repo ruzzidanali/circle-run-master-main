@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Ping Render health endpoint
         env:
-          TARGET_URL: https://circle-run-master-main.onrender.com/health
+          TARGET_URL: https://circle-run.onrender.com/health
         run: |
           curl -m 30 -fsS "$TARGET_URL" || echo "Ping failed, but that's okay"
