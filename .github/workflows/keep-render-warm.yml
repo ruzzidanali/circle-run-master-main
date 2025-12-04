@@ -1,6 +1,8 @@
 name: Keep Render warm
 
 on:
+  push:
+    branches: [ main ]      # TEMP test
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
